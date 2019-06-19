@@ -1,0 +1,41 @@
+{
+  "name": "inu.gg",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ts-node ./bin/www.ts",
+    "dev": "nodemon --exec ts-node -- ./bin/www.ts",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/express": "^4.17.0",
+    "@types/mongoose": "^5.5.6",
+    "@types/morgan": "^1.7.35",
+    "cookie-parser": "^1.4.4",
+    "debug": "~2.6.9",
+    "express": "^4.17.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "mongoose": "^5.6.0",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.4",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.2",
+    "prettier-tslint": "^0.4.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.17.0",
+    "tslint-config-airbnb-base": "^0.3.0",
+    "typescript": "^3.5.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "pettier --write",
+      "tslint --fix -c tslint.json -p tsconfig.json",
+      "git add"
+    ]
+  }
+}
